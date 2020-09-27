@@ -29,20 +29,22 @@ const RegistrationForm = (props) => {
       password: "",
       password_confirm: ""
     },
-    validationSchema,
     validateOnBlur: false,
     validateOnChange: false,
-    onSubmit: async (values) => {
-      console.log("test");
-      try {
-        console.log("here we go");
-        const response = await auth.signup(values.email, values.password);
-        console.log("registered", response);
-        history.push(`${props.rootPath}/login`);
-      } catch (error) {
-        console.error("Oh shit", error);
-      }
-    }
+    validationSchema,
+
+    onSubmit: () => console.log("affe")
+    // onSubmit: async (values) => {
+    //   console.log("test");
+    //   try {
+    //     console.log("here we go");
+    //     const response = await auth.signup(values.email, values.password);
+    //     console.log("registered", response);
+    //     history.push(`${props.rootPath}/login`);
+    //   } catch (error) {
+    //     console.error("Oh shit", error);
+    //   }
+    // }
   });
 
   const wrappedHandleSubmit = useCallback(
